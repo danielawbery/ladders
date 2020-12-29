@@ -48,6 +48,19 @@ func calculateFactorial(request *big.Int) (result *big.Int) {
 	return result
 }
 
+func requestFactorialShort(value int) string {
+	resultString := "Please enter a valid number. Only 1 <= n <= 100 supported."
+
+	if value >= 1 && (value <= 100) {
+		result := new(big.Int)
+		result.MulRange(1, int64(value))
+		resultString = "Result (cheat): " + result.Text(10)
+	}
+
+	return resultString
+}
+
 func main() {
-	fmt.Print(requestFactorial(25))
+	fmt.Println(requestFactorial(25))
+	fmt.Println(requestFactorialShort(25))
 }
