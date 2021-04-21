@@ -1,7 +1,12 @@
 # Coding Challenges for Learning Purposes
 
 ## Grokking Algorithms Exercises
-**Ref:** [Grokking Algorithms on Manning](https://livebook.manning.com/grokking-algorithms/chapter-1)
+**Main Reference:**
+* [Grokking Algorithms on Manning](https://livebook.manning.com/grokking-algorithms/chapter-1)
+* [Golang translation of code samples](https://github.com/jonatasbaldin/grokking-algorithms-golang)
+
+**Additional References:**
+* [Tail Recursion](https://stackoverflow.com/questions/33923/what-is-tail-recursion)
 
 ## Practice Exercises
 
