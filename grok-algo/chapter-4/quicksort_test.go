@@ -1,8 +1,10 @@
 package main
 
 import (
+	"math/rand"
 	"reflect"
 	"testing"
+	"time"
 )
 
 func quickSort(array []int) []int {
@@ -10,9 +12,17 @@ func quickSort(array []int) []int {
 		return array
 	}
 
+	/* This is bad as it leads to worst case operation, O(n^2)
 	pivot := array[0]
+
+	Instead, we should choose a pivot at random, to get the average/ best case. O(n log n)
+	*/
+	rand.Seed(time.Now().Unix())
+	pivotIndex := rand.Intn(len(array))
+	pivot := array[pivotIndex]
+
 	// DON'T FORGET TO REMOVE PIVOT FROM THE ARRAY!!!!
-	array = array[1:]
+	array = append(array[:pivotIndex], array[pivotIndex+1:]...)
 	lesser := []int{}
 	greater := []int{}
 
