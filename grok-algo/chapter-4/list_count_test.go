@@ -2,15 +2,15 @@ package main
 
 import "testing"
 
-func count_elements(array []int) int {
+func countElements(array []int) int {
 	if len(array) == 0 {
 		return 0
 	}
 
-	return 1 + count_elements(array[1:])
+	return 1 + countElements(array[1:])
 }
 
-func Test_Count_Elements(t *testing.T) {
+func TestCountElements(t *testing.T) {
 	testCases := []struct {
 		desc   string
 		input  []int
@@ -34,7 +34,7 @@ func Test_Count_Elements(t *testing.T) {
 	}
 	for _, tC := range testCases {
 		t.Run(tC.desc, func(t *testing.T) {
-			r := count_elements(tC.input)
+			r := countElements(tC.input)
 
 			if r != tC.output {
 				t.Errorf("Expected %d, got %d", tC.output, r)

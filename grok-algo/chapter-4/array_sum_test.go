@@ -2,7 +2,7 @@ package main
 
 import "testing"
 
-func loop_sum(array []int) int {
+func loopSum(array []int) int {
 	total := 0
 	for i := 1; i < len(array)+1; i++ {
 		total += i
@@ -10,23 +10,23 @@ func loop_sum(array []int) int {
 	return total
 }
 
-func recursion_sum(array []int) int {
+func recursionSum(array []int) int {
 	if len(array) == 0 {
 		return 0
 	}
 
-	return array[0] + recursion_sum(array[1:])
+	return array[0] + recursionSum(array[1:])
 }
 
-func Test_Sum_Array(t *testing.T) {
-	full_array := []int{1, 2, 3, 4, 5}
-	full_array_output := 15
+func TestSumArray(t *testing.T) {
+	fullArray := []int{1, 2, 3, 4, 5}
+	fullArrayOutput := 15
 
-	single_element_array := []int{1}
-	single_element_array_output := 1
+	singleElementArray := []int{1}
+	singleElementArrayOutput := 1
 
-	null_array := []int{}
-	null_array_output := 0
+	nullArray := []int{}
+	nullArrayOutput := 0
 
 	testCasesLoop := []struct {
 		desc   string
@@ -35,18 +35,18 @@ func Test_Sum_Array(t *testing.T) {
 	}{
 		{
 			desc:   "1: Sum array by Loop (full array)",
-			input:  full_array,
-			output: full_array_output,
+			input:  fullArray,
+			output: fullArrayOutput,
 		},
 		{
 			desc:   "2: Sum array by Loop (single element array)",
-			input:  single_element_array,
-			output: single_element_array_output,
+			input:  singleElementArray,
+			output: singleElementArrayOutput,
 		},
 		{
 			desc:   "3: Sum array by Loop (null array)",
-			input:  null_array,
-			output: null_array_output,
+			input:  nullArray,
+			output: nullArrayOutput,
 		},
 	}
 	testCasesRecursion := []struct {
@@ -56,23 +56,23 @@ func Test_Sum_Array(t *testing.T) {
 	}{
 		{
 			desc:   "1: Sum array by Recursion (full array)",
-			input:  full_array,
-			output: full_array_output,
+			input:  fullArray,
+			output: fullArrayOutput,
 		},
 		{
 			desc:   "2: Sum array by Recursion (single element array)",
-			input:  single_element_array,
-			output: single_element_array_output,
+			input:  singleElementArray,
+			output: singleElementArrayOutput,
 		},
 		{
 			desc:   "3: Sum array by Recursion (null array)",
-			input:  null_array,
-			output: null_array_output,
+			input:  nullArray,
+			output: nullArrayOutput,
 		},
 	}
 	for _, tC := range testCasesLoop {
 		t.Run(tC.desc, func(t *testing.T) {
-			r := loop_sum(tC.input)
+			r := loopSum(tC.input)
 
 			if r != tC.output {
 				t.Errorf("Expected %d, got %d", tC.output, r)
@@ -81,7 +81,7 @@ func Test_Sum_Array(t *testing.T) {
 	}
 	for _, tC := range testCasesRecursion {
 		t.Run(tC.desc, func(t *testing.T) {
-			r := recursion_sum(tC.input)
+			r := recursionSum(tC.input)
 
 			if r != tC.output {
 				t.Errorf("Expected %d, got %d", tC.output, r)
