@@ -75,7 +75,7 @@ func Test_Sum_Array(t *testing.T) {
 			r := loop_sum(tC.input)
 
 			if r != tC.output {
-				t.Errorf("expected %d, got %d", tC.output, r)
+				t.Errorf("Expected %d, got %d", tC.output, r)
 			}
 		})
 	}
@@ -84,7 +84,7 @@ func Test_Sum_Array(t *testing.T) {
 			r := recursion_sum(tC.input)
 
 			if r != tC.output {
-				t.Errorf("expected %d, got %d", tC.output, r)
+				t.Errorf("Expected %d, got %d", tC.output, r)
 			}
 		})
 	}
